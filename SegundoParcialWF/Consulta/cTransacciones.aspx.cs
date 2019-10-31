@@ -13,11 +13,11 @@ using System.Web.UI.WebControls;
 
 namespace SegundoParcialWF.Consulta
 {
-    public partial class cTransaccionesWF : System.Web.UI.Page
+    public partial class cTransacciones : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        if (!Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 FechaIncio.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 FechaFin.Text = DateTime.Now.ToString("yyyy-MM-dd");
@@ -26,19 +26,19 @@ namespace SegundoParcialWF.Consulta
 
         }
 
-public void LlenaReport()
-{
-    RepositorioBase<Transacciones> repositorio = new RepositorioBase<Transacciones>(new Contexto());
-    MyReportViewer.ProcessingMode = ProcessingMode.Local;
-    MyReportViewer.Reset();
-    MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\Reporte.rdlc");
-    MyReportViewer.LocalReport.DataSources.Clear();
-    MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Transacciones", repositorio.GetList(e => true)));
-    MyReportViewer.LocalReport.Refresh();
-}
+        public void LlenaReport()
+        {
+            RepositorioBase<Transacciones> repositorio = new RepositorioBase<Transacciones>(new Contexto());
+            MyReportViewer.ProcessingMode = ProcessingMode.Local;
+            MyReportViewer.Reset();
+            MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\Reporte.rdlc");
+            MyReportViewer.LocalReport.DataSources.Clear();
+            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Transacion", repositorio.GetList(e => true)));
+            MyReportViewer.LocalReport.Refresh();
+        }
 
-    protected void Buscar_Click(object sender, EventArgs e)
-    {
+        protected void Buscar_Click(object sender, EventArgs e)
+        {
             Expression<Func<Transacciones, bool>> Filtro = x => true;
             RepositorioBase<Transacciones> repositorio = new RepositorioBase<Transacciones>(new Contexto());
             DateTime desde = Utils.ToDateTime(FechaIncio.Text);

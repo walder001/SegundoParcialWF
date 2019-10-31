@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="cTransaccionesWF.aspx.cs" Inherits="SegundoParcialWF.Consulta.cTransaccionesWF" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="cTransacciones.aspx.cs" Inherits="SegundoParcialWF.Consulta.cTransacciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+ <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
      <div class="container">
         <ul class="nav justify-content-center bg-success">
             <li>
@@ -62,10 +62,10 @@
             </div>
             <!-- Modal para mi Reporte.// -->
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm" style="max-width: 600px!important; min-width: 300px!important">
+                <div class="modal-dialog modal-sm" style="max-width: 800px!important; min-width: 800px!important">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">REPORTE EVALUACIONES</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">REPORTE RANSACCIONES</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -73,7 +73,7 @@
                         <div class="modal-body">
                             <asp:ScriptManager runat="server" />
                             <%--Viewer--%>
-                            <rsweb:ReportViewer ID="MyReportViewer" runat="server" ProcessingMode="Remote" Height="400px" Width="500px">
+                            <rsweb:ReportViewer ID="MyReportViewer" runat="server" ProcessingMode="Remote" Height="800px" Width="800px">
                                 <ServerReport ReportPath="" ReportServerUrl="" />
                             </rsweb:ReportViewer>
                         </div>

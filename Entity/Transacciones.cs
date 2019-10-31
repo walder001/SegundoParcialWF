@@ -12,6 +12,7 @@ namespace Entity
     {
         [Key]
         public int TransaccionesId { get; set; }
+        public int ClienteId { get; set; }
         public string Cliente { get; set; }
         public DateTime Fecha { get; set; }
         public string Tipo { get; set; }
@@ -20,15 +21,17 @@ namespace Entity
         public Transacciones()
         {
             TransaccionesId = 0;
+            ClienteId = 0;
             Cliente = string.Empty;
             Fecha = DateTime.Now;
             Tipo = string.Empty;
             Monto = 0;
 
         }
-        public Transacciones(int transaccionesId,string cliente, DateTime fecha, string tipo, decimal monto)
+        public Transacciones(int transaccionesId,int clienteid,string cliente, DateTime fecha, string tipo, decimal monto)
         {
             TransaccionesId = transaccionesId;
+            ClienteId = clienteid;
             Cliente = cliente;
             Fecha = fecha;
             Tipo = tipo;

@@ -11,7 +11,7 @@ namespace SegundoParcialWF.Consulta
 {
 
 
-    public partial class cTransaccionesWF
+    public partial class cTransacciones
     {
 
         /// <summary>

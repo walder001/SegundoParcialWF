@@ -46,6 +46,8 @@ namespace Entity.Tests
             Transacciones transacciones = new Transacciones();
 
             transacciones.TransaccionesId = 1;
+            transacciones.ClienteId = 0;
+            transacciones.Cliente = "Walder";
             transacciones.Fecha = DateTime.Now;
             transacciones.Tipo = "Efectivo";
             transacciones.Monto = 100;

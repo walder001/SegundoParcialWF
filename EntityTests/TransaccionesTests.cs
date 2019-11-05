@@ -16,9 +16,8 @@ namespace Entity.Tests
         [TestMethod()]
         public void Guardar()
         {
-            RepositorioBase<Transacciones> repositorio;
-            repositorio = new RepositorioBase<Transacciones>(new Contexto());
-
+            Repositorio repositorio;
+            repositorio = new Repositorio(new Contexto());
             Assert.IsTrue(repositorio.Guardar(new Transacciones()));
         }
         [TestMethod()]
